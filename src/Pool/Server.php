@@ -53,9 +53,7 @@ class Server
     {
         $this->_host = $host;
         $this->_port = $port;
-        if ($config) {
-            $this->_config = array_merge($this->_config, $config);
-        }
+        $this->_config = array_merge($this->_config, $config);
     }
 
     /**

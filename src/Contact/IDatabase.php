@@ -86,18 +86,5 @@ interface IDatabase
      */
     public function lastRowCount();
 
-    /**
-     * 获取驱动名称
-     *
-     * @return string
-     */
-    public function getDriverName();
-
-    /**
-     * 获取数据库连接实例
-     *
-     * @return resource
-     */
-    public function getInstance();
 
 }

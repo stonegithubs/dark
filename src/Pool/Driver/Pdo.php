@@ -188,17 +188,6 @@ class Pdo implements IDatabase
 	}
 
     /**
-     * 获取驱动器名称
-     *
-     * @access public
-     * @return string
-     */
-    function getDriverName()
-    {
-        return $this->_instance->getAttribute(\PDO::ATTR_DRIVER_NAME);
-    }
-
-    /**
      * 设置取值模式
      *
      * @param $mode
@@ -208,16 +197,6 @@ class Pdo implements IDatabase
     {
         $this->_fetch_mode = $mode;
         return $this;
-    }
-
-    /**
-     * 获取PDO对象实例
-     *
-     * @return \PDO
-     */
-    function getInstance()
-    {
-        return $this->_instance;
     }
 
 }

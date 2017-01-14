@@ -107,7 +107,7 @@ class Server
                 try {
                     $driver = $this->_driver;
                     $driver = $driver();
-                    if (!$driver || !$driver instanceof IDatabase) {
+                    if (!$driver || !$driver instanceof IDriver) {
                         throw new Exception('无效的数据库连接驱动');
                     }
                     $conn_id = (($worker_id + 1) * 10). $i;
@@ -116,7 +116,7 @@ class Server
                         'id'=> $conn_id,
                         'driver' => $driver,
                         'fd'=> -1,
-                        'hash'=> spl_object_hash($driver),
+                        'hash'=> spl_object_hash($driver->getInstance()),
                     );
                     $this->_printLog(sprintf('数据库连接创建成功[conn:%s][pool:%s]', $conn_id, $worker_id));
                 } catch (Exception $e) {

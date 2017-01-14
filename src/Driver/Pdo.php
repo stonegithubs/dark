@@ -43,7 +43,14 @@ class Pdo implements IDriver
 	function __construct($dsn = null, $user = null, $pass = null, array $options = array())
 	{
 		try {
-            $this->_instance = new \PDO($dsn, $user, $pass, $options);
+            $_options = array(
+                \PDO::ATTR_ERRMODE              => \PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_ORACLE_NULLS         => \PDO::NULL_EMPTY_STRING,
+                \PDO::ATTR_EMULATE_PREPARES     => false,
+                \PDO::ATTR_PERSISTENT           => false,
+            );
+            $options && $_options = array_merge($_options, $options);
+            $this->_instance = new \PDO($dsn, $user, $pass, $_options);
 		} catch(\PDOException $e) {
 			throw new Exception($e->getMessage());
 		}
@@ -197,6 +204,16 @@ class Pdo implements IDriver
     {
         $this->_fetch_mode = $mode;
         return $this;
+    }
+
+    /**
+     * 获取PDO对象实例
+     *
+     * @return Pdo|\PDO
+     */
+    function getInstance()
+    {
+        return $this->_instance;
     }
 
 }

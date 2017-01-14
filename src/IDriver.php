@@ -1,8 +1,8 @@
 <?php
 
-namespace Dark\Contact;
+namespace Dark;
 
-interface IDatabase
+interface IDriver
 {
 
     /**

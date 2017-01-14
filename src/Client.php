@@ -1,11 +1,10 @@
 <?php
 
-namespace Dark\Client;
+namespace Dark;
 
-use Dark\Contact\IDatabase;
 use swoole_client as SwooleClient;
 
-class Adapter implements IDatabase
+class Client implements IDriver
 {
 
     /**

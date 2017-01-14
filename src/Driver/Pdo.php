@@ -1,10 +1,10 @@
 <?php
 
-namespace Dark\Pool\Driver;
+namespace Dark\Driver;
 
-use Dark\Contact\IDatabase;
+use Dark\IDriver;
 
-class Pdo implements IDatabase
+class Pdo implements IDriver
 {
 
     /**

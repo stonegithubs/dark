@@ -1,6 +1,6 @@
 <?php
 
-namespace Dark\Pool;
+namespace Dark\Driver;
 
 class Exception extends \Dark\Exception
 {

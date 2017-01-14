@@ -1,9 +1,8 @@
 <?php
 
-namespace Dark\Pool;
+namespace Dark;
 
 use Closure;
-use Dark\Contact\IDatabase;
 use swoole_server as SwooleServer;
 
 class Server

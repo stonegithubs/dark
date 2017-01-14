@@ -41,7 +41,7 @@ class Client implements IDriver
             $i++;
         }
         if (!$this->_instance) {
-            throw new Exception('无法访问Oracle连接池');
+            throw new Exception('无法访问连接池');
         }
     }
 

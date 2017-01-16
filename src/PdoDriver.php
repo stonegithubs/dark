@@ -1,10 +1,10 @@
 <?php
 
-namespace Dark\Driver;
+namespace Dark;
 
 use Dark\IDriver;
 
-class Pdo implements IDriver
+class PdoDriver implements IDriver
 {
 
     /**
